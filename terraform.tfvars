@@ -117,12 +117,12 @@ NAT-pip-sku = "Standard"
 NAT-GWY-name = "NAT-GATEWAY"
 NAT-GWY-sku_name = "Standard"
 
-TF-PIP-name = "TF-publicip"
+TF-PIP-name = "TF-publicipss"
 TF-PIP-allocation_method = "Static"
-TF-PIP-domain_name_label = "tfpublicip"
-TF-Profile-name = "Traffic-profile"
+TF-PIP-domain_name_label = "tfpublicipss"
+TF-Profile-name = "Traffic-profiless"
 TF-Profile-traffic_routing_method = "Weighted"
-TF-Profile-relative_name = "TF-profile"
+TF-Profile-relative_name = "TF-profiless"
 TF-Profile-ttl = 100
 TF-Profile-protocol = "HTTP"
 TF-Profile-port = 80
@@ -130,7 +130,7 @@ TF-Profile-path = "/"
 TF-Profile-interval_in_seconds = 30
 TF-Profile-timeout_in_seconds = 9
 TF-Profile-tolerated_number_of_failures = 3
-TF-endpoint-name = "TF-endpoint"
+TF-endpoint-name = "TF-endpointss"
 TF-endpoint-weight = 100
 
 PTS-sb-name = "GatewaySubnet"
