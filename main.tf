@@ -13,58 +13,58 @@ provider "azurerm" {
   }
 }
 module "contos" {
-    source = "./contos"
+    source = "./modules/contos"
     managementgroup = var.managementgroup
     
 }
 module "decom" {
-    source = "./contos/decom"
+    source = "./modules/contos/decom"
     childgroupA0 =var.childgroupA0
     managementgroup-parent-ID = module.contos.managementgroup-parent-ID
 }
 module "platform" {
-    source = "./contos/platform"
+    source = "./modules/contos/platform"
     childgroupB0 = var.childgroupB0
     managementgroup-parent-ID = module.contos.managementgroup-parent-ID
     
 }
 module "connectivity" {
-    source = "./contos/platform/connectivity"
+    source = "./modules/contos/platform/connectivity"
     childgroupB1 = var.childgroupB1
     childgroupB0-ID = module.platform.childgroupB0-ID
     
 }
 module "identity" {
-    source = "./contos/platform/identity"
+    source = "./modules/contos/platform/identity"
     childgroupB3 = var.childgroupB3
     childgroupB0-ID = module.platform.childgroupB0-ID
 }
 module "management" {
-    source = "./contos/platform/management"
+    source = "./modules/contos/platform/management"
     childgroupB2 = var.childgroupB2
     childgroupB0-ID = module.platform.childgroupB0-ID
     
 }
 module "sandbox" {
-    source = "./contos/sandbox"
+    source = "./modules/contos/sandbox"
     childgroupC0 = var.childgroupC0
     managementgroup-parent-ID = module.contos.managementgroup-parent-ID
     
 }
 module "workloads" {
-    source = "./contos/workloads"
+    source = "./modules/contos/workloads"
     childgroupD0 = var.childgroupD0
     managementgroup-parent-ID = module.contos.managementgroup-parent-ID
     
 }
 module "businessunit1" {
-    source = "./contos/workloads/bs1"
+    source = "./modules/contos/workloads/bs1"
     childgroupD1 = var.childgroupD1
     childgroupD0-ID = module.workloads.childgroupD0-ID
     
 }
 module "businessunit2" {
-    source = "./contos/workloads/bs2"
+    source = "./modules/contos/workloads/bs2"
     childgroupD2 = var.childgroupD2
     childgroupD0-ID = module.workloads.childgroupD0-ID
     
